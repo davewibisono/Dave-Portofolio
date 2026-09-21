@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+<div class="container mt-4">
+    <h4>Hasil Pencarian untuk: <span class="text-danger">"{{ search_query }}"</span></h4>
+    <hr>
+
+    {% if search_results %}
+        <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-2">
+            {% for product in search_results %}
+            <div class="col">
+                <a href="{% pageurl product %}" class="product-card border p-0">
+                    {% if product.image %}
+                        {% image product.image fill-300x300 class="img-fluid" %}
+                    {% else %}
+                        <img src="https://via.placeholder.com/300" class="img-fluid">
+                    {% endif %}
+                    <div class="p-2">
+                        <div class="text-truncate" style="font-size: 0.9rem;">{{ product.title }}</div>
+                        <div class="price-tag mt-2">Rp{{ product.price }}</div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="text-center py-5">
+            <p class="fs-4 text-muted">Maaf, produk tidak ditemukan 😢</p>
+            <a href="/" class="btn btn-danger">Kembali Belanja</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
