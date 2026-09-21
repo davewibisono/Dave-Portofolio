@@ -1,0 +1,313 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Tahoma;
+  font-weight: normal;
+  background-color: #001872;
+  color: #333333;
+}
+
+/* ==================== Container ==================== */
+.body-container {
+  max-width: 622px;
+  margin: 3.188rem auto;
+  background: #fff;
+}
+
+@media (max-width: 768px) {
+  .body-container {
+    margin: 0 auto;
+  }
+}
+
+.container {
+  padding: 0 19px;
+}
+
+/* ==================== TEXT AND OTHERS ==================== */
+h2 {
+  font-family: Roboto;
+  font-size: 2.25rem;
+  margin: 0;
+  color: #001872;
+  font-weight: bold;
+  line-height: 42px;
+}
+
+p {
+  color: #000;
+  font-size: 0.938rem;
+  line-height: 1.5rem;
+}
+
+input {
+  color: #001872;
+}
+
+/* ==================== NAVBAR ==================== */
+.navbar {
+  padding: 2.438rem 0 0 0;
+}
+
+.navbar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 19px;
+}
+
+.navbar-logo {
+  max-width: 195px;
+  width: 100%;
+  height: auto;
+}
+
+/* ==================== HERO ==================== */
+.hero-section {
+  padding: 0 19px;
+  text-align: center;
+}
+
+.hero-section h2 {
+  max-width: 412px !important;
+  margin: 29px auto 28px;
+}
+
+.hero-section .aviko-products {
+  max-width: 408px;
+  width: 100%;
+}
+
+/* ==================== FORM ==================== */
+.form-section {
+  margin: 13px auto 0 auto !important;
+  padding-bottom: 41px !important;
+}
+
+.request-form {
+  text-align: left;
+}
+
+.request-form label {
+  display: block;
+  font-size: 15px;
+  line-height: 18px;
+  color: #001872;
+  margin: 0;
+  margin-top: 40px;
+  font-weight:bolder;
+}
+
+.request-form span {
+  color: #001872;
+}
+
+.request-form p {
+  color: #001872;
+}
+
+.request-form input {
+  width: 100%;
+  padding: 13px 10px 14px;
+  margin: 0.5rem 0;
+  border: 2px solid rgb(184, 181, 181);
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.request-form input[type="text"],
+.request-form input[type="email"],
+.request-form input[type="tel"] {
+  width: 100%;
+  font-size: 15px;
+  font-weight: normal;
+  font-family: Tahoma;
+}
+
+/* Placeholder Styling */
+.request-form input::placeholder {
+  color: #001872;
+  opacity: 1;
+}
+
+.request-form input::-webkit-input-placeholder {
+  color: #001872;
+}
+
+.request-form input::-moz-placeholder {
+  color: #001872;
+}
+
+.request-form input:-ms-input-placeholder {
+  color: #001872;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.two-col > .input-container,
+.two-col > input {
+  flex: 1;
+}
+
+/* ==================== RADIO BUTTON STYLE ==================== */
+.radio-group {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  margin-top: 0.2rem;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  font-weight: normal;
+  margin: 0;
+}
+
+.radio-group input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  border: 2px solid #001872 !important;
+  background-color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.radio-group input::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  background-color: #FDC614;
+}
+
+.radio-group input:checked::before {
+  transform: scale(1);
+}
+
+.radio-group p {
+  font-size: 0.9rem;
+  margin: 0;
+  pointer-events: none;
+}
+
+/* ==================== SUBMIT BUTTON ==================== */
+.btn-submit {
+  display: block;
+  margin: 37px auto;
+  margin-bottom: 0;
+  padding: 14px 25px;
+  background: #FDC614;
+  border: none;
+  color: #001872;
+  font-size: 1.25rem;
+  cursor: pointer;
+  font-weight: medium;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.btn-submit:hover {
+  opacity: 0.9;
+}
+
+/* ==================== VALIDATION STYLE ==================== */
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.error-msg {
+  color: #ff0000;
+  font-size: 11px;
+  display: none;
+  margin-top: -2px;
+  margin-bottom: 5px;
+}
+
+.radio-error{
+  color:red;
+  font-size:12px;
+  margin-top:5px;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+}
+
+/* Active state */
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ==================== THANKYOU ==================== */
+/* Modal box */
+.modal-box {
+  background: #fff;
+  color: #000;
+  padding: 32px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.modal-box h2 {
+  margin-bottom: 12px;
+}
+
+.modal-box p {
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  .modal-box p {
+    font-size: 13px;
+  }
+}
+
+.modal-box button {
+  padding: 10px 3rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  background: #FDC614;
+  color: #001872;
+  cursor: pointer;
+}
