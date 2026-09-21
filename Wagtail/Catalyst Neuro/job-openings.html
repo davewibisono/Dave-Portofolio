@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/query.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Linking SwiperJS CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- ICON -->
+    <!-- --------------------------------------------------------------------------------------------------------------------- -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- --------------------------------------------------------------------------------------------------------------------- -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title>Catalyst Neuro</title>
+  </head>
+
+  <body>
+    <section class="navbar fixed-top sticky-top m-0">
+      <!-- For adjust the content padding -->
+      <div class="container-content">
+        <div class="row">
+
+          <!-- Logo and hamburger button -->
+          <div class="col-3">
+            <img src="imgg/top-left-logo.png" class="navbar_brand" />
+          </div>
+
+          <!-- Main Navigation -->
+          <div class="col-9">
+            <div class="d-flex flex-row justify-content-end">
+              <div class="btn-group">
+
+                <div>
+                  <a type="button" class="btn btn-primary" href="/index.html">Home</a>
+                </div>
+
+                <div>
+                  <a type="button" class="btn btn-primary" href="/our-mission.html">Mission</a>
+                </div>
+  
+                <div class="dropdown">
+                  <button type="button" class="btn btn-primary" data-bs-toggle="dropdown">
+                    <div class="d-flex flex-row">
+                      <a class="btn-dropdown-text-1">Portofolio</a>
+                      <ion-icon name="chevron-down-outline" class="ms-1 dropdown-icon"></ion-icon>
+                    </div>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/clients.html">Clients</a></li>
+                    <li><a class="dropdown-item" href="/software-solutions.html">Software Solutions</a></li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <a type="button" class="btn btn-primary" href="/our-team.html">Team</a>
+                </div>
+  
+                <div class="dropdown">
+                  <button type="button" class="btn btn-primary active" data-bs-toggle="dropdown">
+                    <div class="d-flex flex-row">
+                      <a class="btn-dropdown-text-2">Work with us</a>
+                      <ion-icon name="chevron-down-outline" class="ms-1 dropdown-icon"></ion-icon>
+                    </div>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/job-openings.html">Job Openings</a></li>
+                  </ul>
+                </div>
+  
+                <div>
+                  <a type="button" class="btn btn-primary" href="/blog.html">Blog</a>
+                </div>
+  
+              </div>
+
+              <div class="hamburger-button d-block d-xl-none">
+                <a
+                  href="#"
+                  class="js-colorlib-nav-toggle colorlib-nav-toggle"
+                  ><i></i
+                ></a>
+              </div>
+  
+              <!-- Contact Us button top right navigation bar -->
+              <div class="d-none d-md-block">
+                <button class="contact-us-button d-flex flex-row justify-content-center align-items-center p-0">
+                  <p class="text-capitalize contact-us-text m-0">contact us</p>
+                  <ion-icon
+                    name="arrow-up-sharp"
+                    class="d-flex flex-row align-items-center arrow-icon rotate-arrow"
+                  ></ion-icon>
+                </button>
+              </div>
+
+            </div>            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Navigation when hamburger menu is opened -->
+    <section>
+      <nav id="colorlib-main-nav" role="navigation">
+        <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
+        <div class="js-fullheight colorlib-table">
+          <div class="row no-gutters">
+            <div class="custom-col p-0">
+              <p></p>
+            </div>
+            <div class="col-md-12 p-0">
+              <ul>
+                <li><a href="index.html"><span>home</span></a></li>
+                <li><a href="/our-mission.html"><span>mission</span></a></li>
+                <li><a href="/clients.html"><span>clients</span></a></li>
+                <li><a href="/our-team.html"><span>team</span></a></li>
+                <li><a href="/job-openings.html"><span>work with us</span></a></li>
+                <li><a href="/blog.html"><span>blog</span></a></li>
+                <li><a href="/contact_us.html"><span>contact us</span></a></li>
+              </ul>
+            </div>
+            <div class="custom-col-2 p-0">
+              <div class="text-center p-3">
+                <h1 class="benefits text-uppercase">earn points, complete </br> challenges, and redeem </br> rewards</h1>
+                <button class="btn-custom text-uppercase">create an account</button>
+
+                <div class="d-flex flex-row row-custom pt-3 justify-content-center">
+                  <div class="d-flex flex-column mx-auto">
+                    <h2 class="member-or-signup text-center text-uppercase m-0">already a member?</h2>
+                  </div>
+                  <div class="d-flex flex-column mx-auto">
+                    <button class="btn btn-sign-in p-0">
+                    <h2 class="member-or-signup text-uppercase mb-0">sign-in</h2>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <section class="section-hero">
+      <div class="container-fluid p-0 m-0">
+        <img src="imgg/background-1.png" alt="Nature" class="background-container-job-opening">
+        <div class="job-opening-container-content">
+          <div class="job-opening">
+            <div class="row row-text">
+              <h1 class="header text-capitalize">job openings</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="our-culture-container-content">
+      <div class="our-culture">
+        <div class="row">
+          <div class="col-xl-6 m-0 order-1 order-xl-1">
+            <div class="d-flex flex-column our-culture-content">
+              <h1 class="header text-uppercase">
+                our culture
+              </h1>
+              <h4 class="explanation">
+                OUR CULTURE CatalystNeuro values independence and collaboration. Our mission is to develop channels of communication and distribution of resources between labs to enable exponential growth and innovation. As a part of this team, you will be at the forefront of this effort, shaping the way data, analysis, and visualization tools are standardized and shared across the international community of systems neuroscientists. We embrace today's culture of flexibility and work-life balance, and we are flexible with location and time commitment. While we are based in the United States, we pride ourselves on pulling the best talent from the international landscape.
+              </h4>
+            </div>
+          </div>
+
+          <div class="col-xl-6 m-0 order-1 order-xl-1">
+            <div class="row">
+              <div class="col-6 d-flex flex-column">
+                <img src="imgg/our-culture-1.png" class="img-our-culture-1">
+                <img src="imgg/our-culture-2.png" class="img-our-culture-2 mt-auto">
+              </div>
+              <div class="col-6">
+                <img src="imgg/our-culture-3.png" class="img-our-culture-3">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>      
+    </section>
+  
+    <section class="neuro-data-scientist-container-content">
+      <div class="neuro-data-scientist p-0">
+        <button class="accordion text-capitalize d-flex flex-row w-100">
+          <div class="d-flex flex-column">
+            <h1 class="title">neuro-data scientist</h1>
+            <div class="d-flex flex-row d-block d-lg-none mt-2">
+              <ion-icon name="calendar-clear-outline" class="icon-sub-title"></ion-icon>
+              <p class="sub-title">April 29 2024</p>
+              <ion-icon name="location-outline" class="icon-sub-title"></ion-icon>
+              <p class="sub-title">Remote</p>
+              <ion-icon name="briefcase-outline" class="icon-sub-title"></ion-icon>
+              <p class="sub-title">Part-time contractor</p>
+            </div>
+          </div>
+    
+          <!-- Desktop dan Mobile Verison -->
+          <div class="d-flex flex-row ms-auto">
+            <div class="d-none d-lg-flex flex-row ms-auto">
+              <ion-icon name="calendar-clear-outline" class="icon-sub-title my-auto"></ion-icon>
+              <p class="sub-title my-auto">April 29 2024</p>
+              <ion-icon name="location-outline" class="icon-sub-title my-auto"></ion-icon>
+              <p class="sub-title my-auto">Remote</p>
+              <ion-icon name="briefcase-outline" class="icon-sub-title my-auto"></ion-icon>
+              <p class="sub-title my-auto">Part-time contractor</p>
+            </div>
+            <ion-icon name="chevron-down-outline" class="accordion-toggle-icon ms-auto my-auto"></ion-icon>
+          </div>
+        </button>
+  
+        <div class="panel row m-0">
+          <div class="col-xl-8 p-0 order-1 order-xl-1">
+            <div class="content">
+              <h3 class="explanation1">Summary</h3>
+              <p class="explanation2 m-0">Develop a data science infrastructure for neuroscience labs that will enable collaboration within and across labs. Work closely between researchers and software developers, applying practical and well-engineered data solutions to neuro-data problems. Provide our clients with working code in MATLAB and python that integrates open source data science tools into their workflow and guide the development of these tools to address the needs of the labs.</p>
+    
+              <h3 class="explanation1">Essential functions:</h3>
+              <div class="d-flex flex-column">
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle" class="checkmark"></ion-icon>
+                  <p class="explanation3 m-0">Understand the specific needs of the clients and determine which tools can best meet those needs.</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle"></ion-icon>
+                  <p class="explanation3 m-0">Delve into the various data formats, pipelines and analysis of labs, and implement a plan to integrate the components into a cohesive system</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle"></ion-icon>
+                  <p class="explanation3 m-0">Communicate and iterate regularly with labs to ensure product efficacy</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle"></ion-icon>
+                  <p class="explanation3 m-0">Convert lab data to standard formats (e.g. Neurodata Without Borders) and develop analysis and visualization tools for those formats</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle"></ion-icon>
+                  <p class="explanation3 m-0">Participate in weekly video conference meetings</p>
+                </div>
+                <button class="apply-now-button d-flex flex-row align-items-center">
+                  <p class="text-capitalize apply-now-text m-0">Apply now</p>
+                  <ion-icon name="arrow-up-sharp" class="d-flex flex-row align-items-center arrow-icon rotate-arrow"></ion-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-xl-4 p-0 m-0 order-2 order-xl-2 essential-function">
+            <div class="content">
+              <h3 class="explanation4">The ideal candidate would have:</h3>
+              <div class="d-flex flex-column">
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle" class="checklist"></ion-icon>
+                  <p class="explanation3 m-0">Doctorate or post-graduate experience in neurophysiology. Preferred experience in multi-unit electrophysiology or calcium imaging.</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle" class="checklist"></ion-icon>
+                  <p class="explanation3 m-0">Expertise in python, git and GitHub. Preference given to candidates with C++ or SQL experience.</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle" class="checklist"></ion-icon>
+                  <p class="explanation3 m-0">Self-motivated and able to work independently.</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle" class="checklist"></ion-icon>
+                  <p class="explanation3 m-0">Ability to communicate with clients and respond efficiently to their requests.</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle" class="checklist"></ion-icon>
+                  <p class="explanation3 m-0">Ability to see the big picture and prioritize tasks accordingly.</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle" class="checklist"></ion-icon>
+                  <p class="explanation3 m-0">Capacity to multitask and meet deadlines.</p>
+                </div>
+              </div>
+            </div>
+    
+          </div>
+        </div>
+    </section>
+
+    <section class="neuro-data-scientist-container-content">
+      <div class="neuro-data-scientist p-0">
+        <button class="accordion text-capitalize d-flex flex-row w-100">
+          <div class="d-flex flex-column">
+            <h1 class="title">neuro-data scientist</h1>
+            <div class="d-flex flex-row d-block d-lg-none mt-2">
+              <ion-icon name="calendar-clear-outline" class="icon-sub-title"></ion-icon>
+              <p class="sub-title">April 29 2024</p>
+              <ion-icon name="location-outline" class="icon-sub-title"></ion-icon>
+              <p class="sub-title">Remote</p>
+              <ion-icon name="briefcase-outline" class="icon-sub-title"></ion-icon>
+              <p class="sub-title">Part-time contractor</p>
+            </div>
+          </div>
+    
+          <!-- Desktop dan Mobile Verison -->
+          <div class="d-flex flex-row ms-auto">
+            <div class="d-none d-lg-flex flex-row ms-auto">
+              <ion-icon name="calendar-clear-outline" class="icon-sub-title my-auto"></ion-icon>
+              <p class="sub-title my-auto">April 29 2024</p>
+              <ion-icon name="location-outline" class="icon-sub-title my-auto"></ion-icon>
+              <p class="sub-title my-auto">Remote</p>
+              <ion-icon name="briefcase-outline" class="icon-sub-title my-auto"></ion-icon>
+              <p class="sub-title my-auto">Part-time contractor</p>
+            </div>
+            <ion-icon name="chevron-down-outline" class="accordion-toggle-icon ms-auto my-auto"></ion-icon>
+          </div>
+        </button>
+  
+        <div class="panel row m-0">
+          <div class="col-xl-8 p-0 order-1 order-xl-1">
+            <div class="content">
+              <h3 class="explanation1">Summary</h3>
+              <p class="explanation2 m-0">Develop a data science infrastructure for neuroscience labs that will enable collaboration within and across labs. Work closely between researchers and software developers, applying practical and well-engineered data solutions to neuro-data problems. Provide our clients with working code in MATLAB and python that integrates open source data science tools into their workflow and guide the development of these tools to address the needs of the labs.</p>
+    
+              <h3 class="explanation1">Essential functions:</h3>
+              <div class="d-flex flex-column">
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle" class="checkmark"></ion-icon>
+                  <p class="explanation3 m-0">Understand the specific needs of the clients and determine which tools can best meet those needs.</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle"></ion-icon>
+                  <p class="explanation3 m-0">Delve into the various data formats, pipelines and analysis of labs, and implement a plan to integrate the components into a cohesive system</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle"></ion-icon>
+                  <p class="explanation3 m-0">Communicate and iterate regularly with labs to ensure product efficacy</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle"></ion-icon>
+                  <p class="explanation3 m-0">Convert lab data to standard formats (e.g. Neurodata Without Borders) and develop analysis and visualization tools for those formats</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle"></ion-icon>
+                  <p class="explanation3 m-0">Participate in weekly video conference meetings</p>
+                </div>
+                <button class="apply-now-button d-flex flex-row align-items-center">
+                  <p class="text-capitalize apply-now-text m-0">Apply now</p>
+                  <ion-icon name="arrow-up-sharp" class="d-flex flex-row align-items-center arrow-icon rotate-arrow"></ion-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-xl-4 p-0 m-0 order-2 order-xl-2 essential-function">
+            <div class="content">
+              <h3 class="explanation4">The ideal candidate would have:</h3>
+              <div class="d-flex flex-column">
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle" class="checklist"></ion-icon>
+                  <p class="explanation3 m-0">Doctorate or post-graduate experience in neurophysiology. Preferred experience in multi-unit electrophysiology or calcium imaging.</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle" class="checklist"></ion-icon>
+                  <p class="explanation3 m-0">Expertise in python, git and GitHub. Preference given to candidates with C++ or SQL experience.</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle" class="checklist"></ion-icon>
+                  <p class="explanation3 m-0">Self-motivated and able to work independently.</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle" class="checklist"></ion-icon>
+                  <p class="explanation3 m-0">Ability to communicate with clients and respond efficiently to their requests.</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle" class="checklist"></ion-icon>
+                  <p class="explanation3 m-0">Ability to see the big picture and prioritize tasks accordingly.</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle" class="checklist"></ion-icon>
+                  <p class="explanation3 m-0">Capacity to multitask and meet deadlines.</p>
+                </div>
+              </div>
+            </div>
+    
+          </div>
+        </div>
+    </section>
+
+    <section class="neuro-data-scientist-container-content">
+      <div class="neuro-data-scientist p-0">
+        <button class="accordion text-capitalize d-flex flex-row w-100">
+          <div class="d-flex flex-column">
+            <h1 class="title">neuro-data scientist</h1>
+            <div class="d-flex flex-row d-block d-lg-none mt-2">
+              <ion-icon name="calendar-clear-outline" class="icon-sub-title"></ion-icon>
+              <p class="sub-title">April 29 2024</p>
+              <ion-icon name="location-outline" class="icon-sub-title"></ion-icon>
+              <p class="sub-title">Remote</p>
+              <ion-icon name="briefcase-outline" class="icon-sub-title"></ion-icon>
+              <p class="sub-title">Part-time contractor</p>
+            </div>
+          </div>
+    
+          <!-- Desktop dan Mobile Verison -->
+          <div class="d-flex flex-row ms-auto">
+            <div class="d-none d-lg-flex flex-row ms-auto">
+              <ion-icon name="calendar-clear-outline" class="icon-sub-title my-auto"></ion-icon>
+              <p class="sub-title my-auto">April 29 2024</p>
+              <ion-icon name="location-outline" class="icon-sub-title my-auto"></ion-icon>
+              <p class="sub-title my-auto">Remote</p>
+              <ion-icon name="briefcase-outline" class="icon-sub-title my-auto"></ion-icon>
+              <p class="sub-title my-auto">Part-time contractor</p>
+            </div>
+            <ion-icon name="chevron-down-outline" class="accordion-toggle-icon ms-auto my-auto"></ion-icon>
+          </div>
+        </button>
+  
+        <div class="panel row m-0">
+          <div class="col-xl-8 p-0 order-1 order-xl-1">
+            <div class="content">
+              <h3 class="explanation1">Summary</h3>
+              <p class="explanation2 m-0">Develop a data science infrastructure for neuroscience labs that will enable collaboration within and across labs. Work closely between researchers and software developers, applying practical and well-engineered data solutions to neuro-data problems. Provide our clients with working code in MATLAB and python that integrates open source data science tools into their workflow and guide the development of these tools to address the needs of the labs.</p>
+    
+              <h3 class="explanation1">Essential functions:</h3>
+              <div class="d-flex flex-column">
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle" class="checkmark"></ion-icon>
+                  <p class="explanation3 m-0">Understand the specific needs of the clients and determine which tools can best meet those needs.</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle"></ion-icon>
+                  <p class="explanation3 m-0">Delve into the various data formats, pipelines and analysis of labs, and implement a plan to integrate the components into a cohesive system</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle"></ion-icon>
+                  <p class="explanation3 m-0">Communicate and iterate regularly with labs to ensure product efficacy</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle"></ion-icon>
+                  <p class="explanation3 m-0">Convert lab data to standard formats (e.g. Neurodata Without Borders) and develop analysis and visualization tools for those formats</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle"></ion-icon>
+                  <p class="explanation3 m-0">Participate in weekly video conference meetings</p>
+                </div>
+                <button class="apply-now-button d-flex flex-row align-items-center">
+                  <p class="text-capitalize apply-now-text m-0">Apply now</p>
+                  <ion-icon name="arrow-up-sharp" class="d-flex flex-row align-items-center arrow-icon rotate-arrow"></ion-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-xl-4 p-0 m-0 order-2 order-xl-2 essential-function">
+            <div class="content">
+              <h3 class="explanation4">The ideal candidate would have:</h3>
+              <div class="d-flex flex-column">
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle" class="checklist"></ion-icon>
+                  <p class="explanation3 m-0">Doctorate or post-graduate experience in neurophysiology. Preferred experience in multi-unit electrophysiology or calcium imaging.</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle" class="checklist"></ion-icon>
+                  <p class="explanation3 m-0">Expertise in python, git and GitHub. Preference given to candidates with C++ or SQL experience.</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle" class="checklist"></ion-icon>
+                  <p class="explanation3 m-0">Self-motivated and able to work independently.</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle" class="checklist"></ion-icon>
+                  <p class="explanation3 m-0">Ability to communicate with clients and respond efficiently to their requests.</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle" class="checklist"></ion-icon>
+                  <p class="explanation3 m-0">Ability to see the big picture and prioritize tasks accordingly.</p>
+                </div>
+                <div class="d-flex flex-row">
+                  <ion-icon name="checkmark-circle" class="checklist"></ion-icon>
+                  <p class="explanation3 m-0">Capacity to multitask and meet deadlines.</p>
+                </div>
+              </div>
+            </div>
+    
+          </div>
+        </div>
+    </section>
+
+    <section class="footer">
+      <div class="container-content">
+        <div class="row">
+          <div class="col-xl-4">
+            <div class="d-flex flex-column">
+              <img src="imgg/img-content_8.png" class="img-footer">
+              <p class="copyright">© 2024 CatalystNeuro. All Rights Reserved.</p>
+            </div>
+          </div>
+  
+          <div class="col-xl-8">
+            <div class="row">
+              <div class="col-4">
+                <div class="d-flex flex-column">
+                  <h1 class="header">
+                    Sitemap
+                  </h1>
+                  <p class="explanation">Home</p>
+                  <p class="explanation">Mission</p>
+                  <p class="explanation">Software</p>
+                  <p class="explanation">Clients</p>
+                  <p class="explanation">Team</p>
+                </div>
+              </div>
+      
+              <div class="col-4">
+                <div class="d-flex flex-column">
+                  <h1 class="header">
+                    Quick Links
+                  </h1>
+                  <p class="explanation">Work with us</p>
+                  <p class="explanation">Blog</p>
+                  <p class="explanation">Contact us</p>
+                </div>
+              </div>
+      
+              <div class="col-md-4">
+                <div class="d-flex flex-column">
+                  <h1 class="header-contact-us">
+                    Contact us
+                  </h1>
+                  <div class="d-flex flex-row">
+                    <ion-icon name="mail-outline" class="icon-content_8"></ion-icon>
+                    <p class="email">Inquiry@catalystneuro.com</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Linking Accordion script -->
+    <script src="js/accordion-job-openings.js"></script>
+
+    <!-- Linking Navbar button script -->
+    <script src="js/button-navbar.js"></script>
+
+    <!-- Linking Dropdown navbar button script -->
+    <script src="js/dropdown-navbar.js"></script>
+
+    <!-- Linking Hamburger menu script -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
+

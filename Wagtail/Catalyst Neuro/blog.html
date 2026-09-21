@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/query.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Linking SwiperJS CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- ICON -->
+    <!-- --------------------------------------------------------------------------------------------------------------------- -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- --------------------------------------------------------------------------------------------------------------------- -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title>Catalyst Neuro</title>
+  </head>
+
+  <body>
+    <section class="navbar fixed-top sticky-top m-0">
+      <!-- For adjust the content padding -->
+      <div class="container-content">
+        <div class="row">
+
+          <!-- Logo and hamburger button -->
+          <div class="col-3">
+            <img src="imgg/top-left-logo.png" class="navbar_brand" />
+          </div>
+
+          <!-- Main Navigation -->
+          <div class="col-9">
+            <div class="d-flex flex-row justify-content-end">
+              <div class="btn-group">
+
+                <div>
+                  <a type="button" class="btn btn-primary" href="/index.html">Home</a>
+                </div>
+
+                <div>
+                  <a type="button" class="btn btn-primary" href="/our-mission.html">Mission</a>
+                </div>
+  
+                <div class="dropdown">
+                  <button type="button" class="btn btn-primary" data-bs-toggle="dropdown">
+                    <div class="d-flex flex-row">
+                      <a class="btn-dropdown-text-1">Portofolio</a>
+                      <ion-icon name="chevron-down-outline" class="ms-1 dropdown-icon"></ion-icon>
+                    </div>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/clients.html">Clients</a></li>
+                    <li><a class="dropdown-item" href="/software-solutions.html">Software Solutions</a></li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <a type="button" class="btn btn-primary" href="/our-team.html">Team</a>
+                </div>
+  
+                <div class="dropdown">
+                  <button type="button" class="btn btn-primary" data-bs-toggle="dropdown">
+                    <div class="d-flex flex-row">
+                      <a class="btn-dropdown-text-2">Work with us</a>
+                      <ion-icon name="chevron-down-outline" class="ms-1 dropdown-icon"></ion-icon>
+                    </div>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/job-openings.html">Job Openings</a></li>
+                  </ul>
+                </div>
+  
+                <div>
+                  <a type="button" class="btn btn-primary active" href="/blog.html">Blog</a>
+                </div>
+  
+              </div>
+
+              <div class="hamburger-button d-block d-xl-none">
+                <a
+                  href="#"
+                  class="js-colorlib-nav-toggle colorlib-nav-toggle"
+                  ><i></i
+                ></a>
+              </div>
+  
+              <!-- Contact Us button top right navigation bar -->
+              <div class="d-none d-md-block">
+                <button class="contact-us-button d-flex flex-row justify-content-center align-items-center p-0">
+                  <p class="text-capitalize contact-us-text m-0">contact us</p>
+                  <ion-icon
+                    name="arrow-up-sharp"
+                    class="d-flex flex-row align-items-center arrow-icon rotate-arrow"
+                  ></ion-icon>
+                </button>
+              </div>
+
+            </div>            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Navigation when hamburger menu is opened -->
+    <section>
+      <nav id="colorlib-main-nav" role="navigation">
+        <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
+        <div class="js-fullheight colorlib-table">
+          <div class="row no-gutters">
+            <div class="custom-col p-0">
+              <p></p>
+            </div>
+            <div class="col-md-12 p-0">
+              <ul>
+                <li><a href="index.html"><span>home</span></a></li>
+                <li><a href="/our-mission.html"><span>mission</span></a></li>
+                <li><a href="/clients.html"><span>clients</span></a></li>
+                <li><a href="/our-team.html"><span>team</span></a></li>
+                <li><a href="/job-openings.html"><span>work with us</span></a></li>
+                <li><a href="/blog.html"><span>blog</span></a></li>
+                <li><a href="/contact_us.html"><span>contact us</span></a></li>
+              </ul>
+            </div>
+            <div class="custom-col-2 p-0">
+              <div class="text-center p-3">
+                <h1 class="benefits text-uppercase">earn points, complete </br> challenges, and redeem </br> rewards</h1>
+                <button class="btn-custom text-uppercase">create an account</button>
+
+                <div class="d-flex flex-row row-custom pt-3 justify-content-center">
+                  <div class="d-flex flex-column mx-auto">
+                    <h2 class="member-or-signup text-center text-uppercase m-0">already a member?</h2>
+                  </div>
+                  <div class="d-flex flex-column mx-auto">
+                    <button class="btn btn-sign-in p-0">
+                    <h2 class="member-or-signup text-uppercase mb-0">sign-in</h2>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <section class="section-hero">
+      <div class="container-fluid p-0 m-0">
+        <img src="imgg/background-1.png" alt="Nature" class="background-container-blog">
+        <div class="blog-container-content">
+          <div class="blog">
+            <div class="row row-text">
+              <h1 class="header text-capitalize">blog</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sed-a-facilis-container-content">
+      <div class="sed-a-facilis">
+        <div class="row">
+          <div class="col-xl-7 m-0 order-1 order-xl-1">
+            <div class="d-flex flex-column ">
+              <img src="imgg/sed-a-facilis.png" class="sed-a-facilis-img">
+              <div class="d-flex flex-column sed-a-facilis-content">
+                <p class="date">
+                  25 Apr 2023
+                </p>
+                <h1 class="header">
+                  Sed a facilisis ante. Nulla vehicula vehicula
+                </h1>
+                <h4 class="explanation">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tellus dui, vestibulum quis velit vel, fringilla eleifend quam. 
+                </h4>
+                <button class="btn-learn-more d-flex flex-row align-items-center"
+                >
+                <p class="learn-more text-uppercase m-0">
+                  learn more
+                </p>
+                <ion-icon name="arrow-up-sharp" class="d-flex flex-row align-items-center arrow-icon rotate-arrow"
+                ></ion-icon>
+              </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-5 d-flex align-items-center mx-auto order-2 order-xl-2">
+            <div class="d-flex flex-column news">
+              <div class="d-flex flex-row news-content-1">
+                <img src="imgg/sed-a-facilis-1.png" class="sed-a-facilis-img-small">
+                <div class="d-flex flex-column news-content">
+                  <p class="date">
+                    25 Apr 2023
+                  </p>
+                  <h1 class="explanation">
+                    Vivamus bibendum id risus at convallis. 
+                  </h1>
+                </div>
+              </div>
+              
+              <div class="d-flex flex-row news-content-2-3">
+                <img src="imgg/sed-a-facilis-2.png" class="sed-a-facilis-img-small">
+                <div class="d-flex flex-column news-content">
+                  <p class="date">
+                    25 Apr 2023
+                  </p>
+                  <h1 class="explanation">
+                    Vivamus bibendum id risus at convallis. 
+                  </h1>
+                </div>
+              </div>
+
+              <div class="d-flex flex-row news-content-2-3">
+                <img src="imgg/sed-a-facilis-3.png" class="sed-a-facilis-img-small">
+                <div class="d-flex flex-column news-content">
+                  <p class="date">
+                    25 Apr 2023
+                  </p>
+                  <h1 class="explanation">
+                    Vivamus bibendum id risus at convallis. 
+                  </h1>
+                </div>
+              </div>
+
+              <div class="d-flex flex-row news-content-4">
+                <img src="imgg/sed-a-facilis-4.png" class="sed-a-facilis-img-small">
+                <div class="d-flex flex-column news-content">
+                  <p class="date">
+                    25 Apr 2023
+                  </p>
+                  <h1 class="explanation">
+                    Vivamus bibendum id risus at convallis. 
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>      
+    </section>
+
+    <section class="more-posts-container-content d-flex flex-column">
+      <div class="filter-section row">
+        <div class="col-xl-8 my-auto p-0">
+          <button onclick="setCategory('Category 1')">Category 1</button>
+          <button onclick="setCategory('Category 2')">Category 2</button>
+          <button onclick="setCategory('Category 3')">Category 3</button>
+          <button onclick="setCategory('Category 4')">Category 4</button>
+          <button onclick="setCategory('Category 5')">Category 5</button>
+          <button onclick="setCategory('Category 6')">Category 6</button>
+        </div>
+        <input type="text" id="searchInput" placeholder="  Search post                                          ⌕" onkeyup="filterPosts()" class="col-xl-4 p-0">
+      </div>
+    
+      <div class="posts-container col" id="postsContainer">
+        <div class="post-card" data-title="5 Tools to Boost Your Productivity" data-category="Category 1">
+          <img src="imgg/post-1.png" class="post-image">
+          <div class="post-content">
+            <span class="badge text-uppercase">Category 1</span>
+            <h3 class="post-title">5 Tools to Boost Your Productivity</h3>
+            <p class="post-date">20 JUNE 2023 ● 3 MIN READ</p>
+            <a href="#" class="btn-read-more">
+              <div class="read-more d-flex flex-row text-uppercase align-items-center">
+                Read More
+                <ion-icon name="chevron-forward-outline" class="ms-1"></ion-icon>
+              </div>
+            </a>
+          </div>
+        </div>
+    
+        <div class="post-card" data-title="Design Trends You Need to Watch" data-category="Category 2">
+          <img src="imgg/post-2.png" class="post-image">
+          <div class="post-content">
+            <span class="badge text-uppercase">Category 2</span>
+            <h3 class="post-title">Design Trends You Need to Watch</h3>
+            <p class="post-date">21 JUNE 2023 ● 3 MIN READ</p>
+            <a href="#" class="btn-read-more">
+              <div class="read-more d-flex flex-row text-uppercase align-items-center">
+                Read More
+                <ion-icon name="chevron-forward-outline" class="ms-1"></ion-icon>
+              </div>
+            </a>
+          </div>
+        </div>
+    
+        <div class="post-card" data-title="Healthy Habits for a Better Life" data-category="Category 3">
+          <img src="imgg/post-3.png" class="post-image">
+          <div class="post-content">
+            <span class="badge text-uppercase">Category 3</span>
+            <h3 class="post-title">Healthy Habits for a Better Life</h3>
+            <p class="post-date">20 JUNE 2023 ● 3 MIN READ</p>
+            <a href="#" class="btn-read-more">
+              <div class="read-more d-flex flex-row text-uppercase align-items-center">
+                Read More
+                <ion-icon name="chevron-forward-outline" class="ms-1"></ion-icon>
+              </div>
+            </a>
+          </div>
+        </div>
+    
+        <div class="post-card" data-title="UI/UX Tips for Beginners" data-category="Category 2">
+          <img src="imgg/post-4.png" class="post-image">
+          <div class="post-content">
+            <span class="badge text-uppercase">Category 2</span>
+            <h3 class="post-title">UI/UX Tips for Beginners</h3>
+            <p class="post-date">23 JUNE 2023 ● 3 MIN READ</p>
+            <a href="#" class="btn-read-more">
+              <div class="read-more d-flex flex-row text-uppercase align-items-center">
+                Read More
+                <ion-icon name="chevron-forward-outline" class="ms-1"></ion-icon>
+              </div>
+            </a>
+          </div>
+        </div>
+    
+        <div class="post-card" data-title="Introduction to Web Development" data-category="Category 4">
+          <img src="imgg/post-5.png" class="post-image">
+          <div class="post-content">
+            <span class="badge text-uppercase">Category 4</span>
+            <h3 class="post-title">Introduction to Web Development</h3>
+            <p class="post-date">21 JUNE 2023 ● 3 MIN READ</p>
+            <a href="#" class="btn-read-more">
+              <div class="read-more d-flex flex-row text-uppercase align-items-center">
+                Read More
+                <ion-icon name="chevron-forward-outline" class="ms-1"></ion-icon>
+              </div>
+            </a>
+          </div>
+        </div>
+    
+        <div class="post-card" data-title="Advanced CSS Techniques" data-category="Category 5">
+          <img src="imgg/post-6.png" class="post-image">
+          <div class="post-content">
+            <span class="badge text-uppercase">Category 5</span>
+            <h3 class="post-title">Advanced CSS Techniques</h3>
+            <p class="post-date">23 JUNE 2023 ● 3 MIN READ</p>
+            <a href="#" class="btn-read-more">
+              <div class="read-more d-flex flex-row text-uppercase align-items-center">
+                Read More
+                <ion-icon name="chevron-forward-outline" class="ms-1"></ion-icon>
+              </div>
+            </a>
+          </div>
+        </div>
+    
+        <div class="post-card" data-title="JavaScript Frameworks Overview" data-category="Category 6">
+          <img src="imgg/post-6.png" class="post-image">
+          <div class="post-content">
+            <span class="badge text-uppercase">Category 6</span>
+            <h3 class="post-title">JavaScript Frameworks Overview</h3>
+            <p class="post-date">22 JUNE 2023 ● 3 MIN READ</p>
+            <a href="#" class="btn-read-more">
+              <div class="read-more d-flex flex-row text-uppercase align-items-center">
+                Read More
+                <ion-icon name="chevron-forward-outline" class="ms-1"></ion-icon>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="post-card" data-title="5 Tools to Boost Your Productivity" data-category="Category 1">
+          <img src="imgg/post-7.png" class="post-image">
+          <div class="post-content">
+            <span class="badge text-uppercase">Category 1</span>
+            <h3 class="post-title">5 Tools to Boost Your Productivity</h3>
+            <p class="post-date">20 JUNE 2023 ● 3 MIN READ</p>
+            <a href="#" class="btn-read-more">
+              <div class="read-more d-flex flex-row text-uppercase align-items-center">
+                Read More
+                <ion-icon name="chevron-forward-outline" class="ms-1"></ion-icon>
+              </div>
+            </a>
+          </div>
+        </div>
+    
+        <div class="post-card" data-title="Design Trends You Need to Watch" data-category="Category 3">
+          <img src="imgg/post-8.png" class="post-image">
+          <div class="post-content">
+            <span class="badge text-uppercase">Category 3</span>
+            <h3 class="post-title">Design Trends You Need to Watch</h3>
+            <p class="post-date">21 JUNE 2023 ● 3 MIN READ</p>
+            <a href="#" class="btn-read-more">
+              <div class="read-more d-flex flex-row text-uppercase align-items-center">
+                Read More
+                <ion-icon name="chevron-forward-outline" class="ms-1"></ion-icon>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <button class="more-blog mx-auto">
+        <h1 class="load-more-blogs text-uppercase">load more blogs</h1>
+      </button>
+    </section> 
+
+    <section class="footer">
+      <div class="container-content">
+        <div class="row">
+          <div class="col-xl-4">
+            <div class="d-flex flex-column">
+              <img src="imgg/img-content_8.png" class="img-footer">
+              <p class="copyright">© 2024 CatalystNeuro. All Rights Reserved.</p>
+            </div>
+          </div>
+  
+          <div class="col-xl-8">
+            <div class="row">
+              <div class="col-4">
+                <div class="d-flex flex-column">
+                  <h1 class="header">
+                    Sitemap
+                  </h1>
+                  <p class="explanation">Home</p>
+                  <p class="explanation">Mission</p>
+                  <p class="explanation">Software</p>
+                  <p class="explanation">Clients</p>
+                  <p class="explanation">Team</p>
+                </div>
+              </div>
+      
+              <div class="col-4">
+                <div class="d-flex flex-column">
+                  <h1 class="header">
+                    Quick Links
+                  </h1>
+                  <p class="explanation">Work with us</p>
+                  <p class="explanation">Blog</p>
+                  <p class="explanation">Contact us</p>
+                </div>
+              </div>
+      
+              <div class="col-md-4">
+                <div class="d-flex flex-column">
+                  <h1 class="header-contact-us">
+                    Contact us
+                  </h1>
+                  <div class="d-flex flex-row">
+                    <ion-icon name="mail-outline" class="icon-content_8"></ion-icon>
+                    <p class="email">Inquiry@catalystneuro.com</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Linking Navbar button script -->
+    <script src="js/button-navbar.js"></script>
+
+    <!-- Linking Dropdown navbar button script -->
+    <script src="js/dropdown-navbar.js"></script>
+
+    <!-- Linking Hamburger menu script -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Linking sort and search script -->
+    <script src="js/sort-and-search.js"></script>
+
+    <!-- Linking more blogs script -->
+    <script src="js/load-more-blogs.js"></script>
+
+  </body>
+</html>
+
