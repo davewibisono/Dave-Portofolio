@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <title>Consolidated Concepts</title>
+  <link rel="icon" href="images/logo.png" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="body-container">
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="#">
+          <img src="images/logo.png" alt="Westminster Logo" class="navbar-logo">
+        </a>
+        <a href="#">
+          <img src="images/divider.png" alt="Divider" class="navbar-divider">
+        </a>
+      </div>
+    </nav>
+
+    <section class="hero-section container" style="padding-bottom: 0;">
+      <h2>From ingredients and office supplies to utilities and services, learn how we can help you save more across your entire operation.</h2>
+    </section>
+
+    <section class="form-section container" style="margin-top: 0;">
+      <form class="request-form" action="https://formspree.io/f/xgollype" method="POST" novalidate>
+        <!-- Formspree helpers -->
+        <input type="hidden" name="_subject" value="Consolidated Concepts">
+        <input type="hidden" name="_redirect" value="index.html">
+        <input type="text" name="_gotcha" style="display:none">
+
+        <!-- Name -->
+        <label style="margin-top: 0;">Name<span>*</span></label>
+        <div class="form-row two-col">
+          <div class="input-container">
+            <input type="text" name="first_name" placeholder="First Name">
+            <span class="error-msg">Required</span>
+          </div>
+          <div class="input-container">
+            <input type="text" name="last_name" placeholder="Last Name">
+            <span class="error-msg">Required</span>
+          </div>
+        </div>
+
+        <!-- Business -->
+        <label>Business Name<span>*</span></label>
+        <div class="input-container">
+          <input type="text" name="business_name" placeholder="Business Name">
+          <span class="error-msg">Business name is</span>
+        </div>
+
+        <!-- Address -->
+        <label>Company Address<span>*</span></label>
+        <div class="input-container">
+          <input type="text" name="address_1" placeholder="Street Address">
+          <span class="error-msg">Address is</span>
+        </div>
+        <input type="text" name="address_2" placeholder="Street Address line 2">
+
+        <div class="form-row two-col">
+          <input type="text" name="city" placeholder="City">
+          <input type="text" name="state" placeholder="State / Province">
+        </div>
+
+        <input type="text" name="zip" placeholder="Postal / Zip Code">
+        <div id="address-error-container"></div>
+
+        <!-- Contact -->
+        <div class="form-row two-col">
+          <div class="input-container">
+            <label>Phone Number<span>*</span></label>
+            <input type="tel" name="phone" inputmode="numeric" placeholder="(000) 000-0000">
+            <span class="error-msg">Required</span>
+          </div>
+          <div class="input-container">
+            <label>Email Address<span>*</span></label>
+            <input type="email" name="email" placeholder="myname@example.com">
+            <span class="error-msg">Required</span>
+          </div>
+        </div>
+
+        <!-- Distributor -->
+        <label>Primary Food Distributor<span>*</span></label>
+        <div class="input-container">
+          <input type="text" name="distributor" placeholder="Distributor Name">
+          <span class="error-msg">Required</span>
+        </div>
+
+        <!-- Locations -->
+        <label>How many locations do you currently have?</label>
+        <div class="input-container">
+          <input 
+            type="number" 
+            name="locations" 
+            placeholder="0-100" 
+            min="0" 
+            max="100"
+           
+          >
+          <span class="error-msg">Required</span>
+        </div>
+
+        <label>Would you like to sign up for more information, news, and deals?</label>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="signup" value="yes"> <p>Yes</p>
+          </label>
+          <label>
+            <input type="radio" name="signup" value="no"> <p>No</p>
+          </label>
+        </div>
+
+        <button type="submit" class="btn-sign-up">SIGN UP TODAY</button>
+      </form>
+    </section>
+  </div>
+
+  <!-- Thankyou -->
+  <div class="modal-overlay" id="thankYouModal">
+    <div class="modal-box">
+      <h2>Thank You!</h2>
+      <p>
+        For trusting Consolidated Concepts.
+      </p>
+      <button onclick="closeModal()">OK</button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>
