@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Demo Chatbot</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      background-color: #f4f4f9; 
+      padding: 40px; 
+    }
+    
+    .chat-container { 
+      width: 380px; 
+      background: white; 
+      border-radius: 10px; 
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
+      overflow: hidden; 
+      position: fixed; 
+      bottom: 20px; right: 20px; 
+      display: flex;
+      flex-direction: column;
+    }
+    .chat-header { 
+      background: #4F46E5; 
+      color: white; 
+      padding: 15px; 
+      font-weight: bold; 
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    /* Tambahkan / Ganti CSS tombol finish-btn dengan kode ini */
+    .finish-btn {
+      background: #EF4444;
+      color: white;
+      border: none;
+      padding: 5px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: bold;
+
+      /* Sembunyikan awal dan siapkan posisi dari kanan */
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(30px);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    /* Class saat tombol aktif/muncul */
+    .finish-btn.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+    }
+
+    .finish-btn:hover { 
+      background: #DC2626; 
+    }
+    .chat-box { 
+      height: 280px; 
+      padding: 15px; 
+      overflow-y: auto; 
+      display: flex; 
+      flex-direction: column; 
+      gap: 10px; 
+    }
+    .message { 
+      max-width: 80%; 
+      padding: 10px 14px; 
+      border-radius: 8px; 
+      font-size: 14px; 
+    }
+    .user-msg { 
+      background: #4F46E5; 
+      color: white; 
+      align-self: flex-end; 
+    }
+    .bot-msg { 
+      background: #E5E7EB; 
+      color: #1F2937; 
+      align-self: flex-start; 
+    }
+    .chat-input { 
+      display: flex; 
+      border-top: 1px solid #ddd; 
+      padding: 10px; 
+      gap: 5px; 
+      background: #fff; 
+    }
+    .chat-input input { 
+      flex: 1; 
+      padding: 8px; 
+      border: 1px solid #ccc; 
+      border-radius: 5px; 
+      outline: none; 
+    }
+    .chat-input button { 
+      background: #4F46E5; 
+      color: white; 
+      border: none; 
+      padding: 8px 15px; 
+      border-radius: 5px; 
+      cursor: pointer; 
+    }
+    .chat-input button:hover { background: #4338CA; }
+    .form-group { 
+      display: flex; 
+      flex-direction: column; 
+      gap: 5px; padding: 10px 15px 0 15px; 
+    }
+    .form-group input { 
+      padding: 6px; 
+      border: 1px solid #ccc; 
+      border-radius: 4px; 
+      font-size: 12px; 
+    }
+
+    /* Rating Modal Container & Scrollable Content */
+    .modal-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      display: none; justify-content: center; align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: white; padding: 20px; border-radius: 12px;
+      width: 420px; max-height: 85vh; overflow-y: auto;
+      display: flex; flex-direction: column; gap: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+    .modal-content h3 { margin: 0; font-size: 16px; color: #1F2937; }
+    .section-title { font-size: 13px; font-weight: bold; color: #374151; margin-bottom: 6px; }
+
+    /* NPS Scale Buttons (0-10) */
+    .nps-container {
+      display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 4px;
+    }
+    /* Styling Kotak NPS 0-10 & Hover */
+    .nps-btn {
+      width: 32px; height: 32px; 
+      border: 1px solid #D1D5DB; 
+      border-radius: 6px;
+      background: #F9FAFB; 
+      cursor: pointer; 
+      font-size: 12px; 
+      font-weight: bold; 
+      color: #374151;
+      transition: all 0.2s ease;
+    }
+    /* Efek saat mouse hover di atas kotak 0-10 */
+    .nps-btn:hover {
+      background: #E0E7FF; /* Warna background biru muda lembut */
+      border-color: #4F46E5; /* Warna border indigo */
+      color: #4F46E5;
+      transform: translateY(-2px); /* Efek sedikit terangkat */
+    }
+
+    /* Efek saat kotak 0-10 sudah terpilih (Selected) */
+    .nps-btn.selected {
+      background: #4F46E5 !important;
+      color: white !important;
+      border-color: #4F46E5 !important;
+    }
+
+    /* Styling Bintang & Hover */
+    .star-icon {
+      font-size: 22px; 
+      color: #D1D5DB; 
+      cursor: pointer; 
+      transition: color 0.15s ease, transform 0.15s ease;
+      display: inline-block;
+    }
+
+    /* Hover individual & preview bintang */
+    .star-icon:hover,
+    .star-icon.hover-active {
+      color: #FBBF24; /* Warna kuning emas */
+      transform: scale(1.15); /* Efek membesar sedikit */
+    }
+
+    /* Warna bintang aktif setelah di-klik */
+    .star-icon.active {
+      color: #FBBF24;
+    }
+    .nps-labels {
+      display: flex; justify-content: space-between; font-size: 10px; color: #9CA3AF; margin-top: 2px;
+    }
+
+    /* Aspect Rating Rows & Interactive Stars */
+    .aspect-row {
+      display: flex; justify-content: space-between; align-items: center; padding: 4px 0;
+    }
+    .aspect-label { font-size: 13px; color: #4B5563; }
+    .stars-rating { display: flex; gap: 4px; direction: ltr; }
+    .star-icon {
+      font-size: 20px; color: #D1D5DB; cursor: pointer; transition: color 0.15s;
+    }
+    .star-icon.active { color: #FBBF24; }
+
+    /* Textareas & Modal Actions */
+    .modal-content textarea {
+      width: 100%; padding: 8px; border: 1px solid #D1D5DB; border-radius: 6px;
+      font-family: inherit; font-size: 12px; box-sizing: border-box; resize: vertical;
+    }
+    .modal-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }
+    .btn-submit { background: #4F46E5; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+    .btn-cancel { background: #9CA3AF; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+    .btn-submit:hover { background: #4338CA; }
+    .btn-cancel:hover { background: #6B7280; }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to Chatbot Website!</h1>
+  <p>Use the chatbot on the right to experience this Website Chatbot.</p>
+
+  <!-- Chatbot Widget -->
+  <div class="chat-container">
+    <div class="chat-header">
+      <span>Customer Support AI</span>
+      <button class="finish-btn" id="finishBtn" onclick="openReviewModal()">Rate</button>
+    </div>
+    
+    <div class="form-group">
+      <input type="text" id="visitorName" placeholder="Your Name">
+      <input type="email" id="visitorEmail" placeholder="Your Email">
+    </div>
+
+    <div class="chat-box" id="chatBox">
+      <div class="message bot-msg">Hello! How can we help you today?</div>
+    </div>
+
+    <div class="chat-input">
+      <input type="text" id="userMessage" placeholder="Type a message..." onkeypress="if(event.key === 'Enter') sendMessage()">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <!-- Rating Modal -->
+  <div class="modal-overlay" id="reviewModal">
+    <div class="modal-content">
+      <h3>Feedback & Rating</h3>
+      
+      <!-- NPS 0-10 Rating -->
+      <div>
+        <div class="section-title">How likely are you to recommend our support to a friend or colleague?</div>
+        <div class="nps-container">
+          <button class="nps-btn" onclick="selectNPS(this, 0)">0</button>
+          <button class="nps-btn" onclick="selectNPS(this, 1)">1</button>
+          <button class="nps-btn" onclick="selectNPS(this, 2)">2</button>
+          <button class="nps-btn" onclick="selectNPS(this, 3)">3</button>
+          <button class="nps-btn" onclick="selectNPS(this, 4)">4</button>
+          <button class="nps-btn" onclick="selectNPS(this, 5)">5</button>
+          <button class="nps-btn" onclick="selectNPS(this, 6)">6</button>
+          <button class="nps-btn" onclick="selectNPS(this, 7)">7</button>
+          <button class="nps-btn" onclick="selectNPS(this, 8)">8</button>
+          <button class="nps-btn" onclick="selectNPS(this, 9)">9</button>
+          <button class="nps-btn" onclick="selectNPS(this, 10)">10</button>
+        </div>
+        <div class="nps-labels">
+          <span>Not likely at all</span>
+          <span>Extremely likely</span>
+        </div>
+      </div>
+
+      <hr style="border:0; border-top:1px solid #E5E7EB; margin:0;">
+
+      <!-- Aspect Ratings -->
+      <div>
+        <div class="section-title">Rate the following aspects (1-5):</div>
+        
+        <div class="aspect-row">
+          <span class="aspect-label">Answer Quality</span>
+          <div class="stars-rating" data-aspect="answerQuality">
+            <span class="star-icon" onclick="setStar(this, 1)">★</span>
+            <span class="star-icon" onclick="setStar(this, 2)">★</span>
+            <span class="star-icon" onclick="setStar(this, 3)">★</span>
+            <span class="star-icon" onclick="setStar(this, 4)">★</span>
+            <span class="star-icon" onclick="setStar(this, 5)">★</span>
+          </div>
+        </div>
+
+        <div class="aspect-row">
+          <span class="aspect-label">Response Speed</span>
+          <div class="stars-rating" data-aspect="responseSpeed">
+            <span class="star-icon" onclick="setStar(this, 1)">★</span>
+            <span class="star-icon" onclick="setStar(this, 2)">★</span>
+            <span class="star-icon" onclick="setStar(this, 3)">★</span>
+            <span class="star-icon" onclick="setStar(this, 4)">★</span>
+            <span class="star-icon" onclick="setStar(this, 5)">★</span>
+          </div>
+        </div>
+
+        <div class="aspect-row">
+          <span class="aspect-label">Website Interface</span>
+          <div class="stars-rating" data-aspect="uiDesign">
+            <span class="star-icon" onclick="setStar(this, 1)">★</span>
+            <span class="star-icon" onclick="setStar(this, 2)">★</span>
+            <span class="star-icon" onclick="setStar(this, 3)">★</span>
+            <span class="star-icon" onclick="setStar(this, 4)">★</span>
+            <span class="star-icon" onclick="setStar(this, 5)">★</span>
+          </div>
+        </div>
+
+        <div class="aspect-row">
+          <span class="aspect-label">Ease of Use</span>
+          <div class="stars-rating" data-aspect="easeOfUse">
+            <span class="star-icon" onclick="setStar(this, 1)">★</span>
+            <span class="star-icon" onclick="setStar(this, 2)">★</span>
+            <span class="star-icon" onclick="setStar(this, 3)">★</span>
+            <span class="star-icon" onclick="setStar(this, 4)">★</span>
+            <span class="star-icon" onclick="setStar(this, 5)">★</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Qualitative Feedback -->
+      <div>
+        <div class="section-title">What did you like about our service?</div>
+        <textarea id="positiveFeedback" rows="2" placeholder="Tell us what you liked..."></textarea>
+      </div>
+
+      <div>
+        <div class="section-title">Suggestions for improvement</div>
+        <textarea id="improvementFeedback" rows="2" placeholder="How can we do better?"></textarea>
+      </div>
+
+      <!-- Modal Actions -->
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeReviewModal()">Cancel</button>
+        <button class="btn-submit" onclick="submitReviewAndFinish()">Submit & Finish</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const N8N_CHAT_URL = "https://nulepuc.app.n8n.cloud/webhook/chat-website";
+    const N8N_FINISH_URL = "https://nulepuc.app.n8n.cloud/webhook-test/finish-website-chat";
+
+    const sessionId = "session_" + Date.now();
+    let chatHistory = [];
+    let selectedNPS = null;
+    let aspectRatings = {
+      answerQuality: 0,
+      responseSpeed: 0,
+      uiDesign: 0,
+      easeOfUse: 0
+    };
+
+    async function sendMessage() {
+      const messageInput = document.getElementById('userMessage');
+      const message = messageInput.value.trim();
+      if (!message) return;
+
+      appendMessage(message, 'user-msg');
+      chatHistory.push({ sender: 'User', message: message });
+      messageInput.value = '';
+
+      const loadingMsg = appendMessage("Typing...", 'bot-msg');
+
+      try {
+        const response = await fetch(N8N_CHAT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sessionId: sessionId, message: message })
+        });
+
+        const data = await response.json();
+        const replyText = (data && data.reply) ? data.reply : "Sorry, an error occurred.";
+        
+        loadingMsg.innerText = replyText;
+        chatHistory.push({ sender: 'AI', message: replyText });
+
+        // Tampilkan tombol Rate setelah balasan bot pertama diterima
+        document.getElementById('finishBtn').style.display = 'inline-block';
+        document.getElementById('finishBtn').classList.add('show');
+
+      } catch (error) {
+        console.error('Error:', error);
+        loadingMsg.innerText = 'Sorry, failed to connect to the server.';
+      }
+    }
+
+    function appendMessage(text, className) {
+      const chatBox = document.getElementById('chatBox');
+      const msgDiv = document.createElement('div');
+      msgDiv.className = `message ${className}`;
+      msgDiv.innerText = text;
+      chatBox.appendChild(msgDiv);
+      chatBox.scrollTop = chatBox.scrollHeight;
+      return msgDiv;
+    }
+
+    function openReviewModal() {
+      document.getElementById('reviewModal').style.display = 'flex';
+    }
+
+    function closeReviewModal() {
+      document.getElementById('reviewModal').style.display = 'none';
+    }
+
+    /* Handler untuk Pilihan NPS 0-10 */
+    function selectNPS(btn, value) {
+      document.querySelectorAll('.nps-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      selectedNPS = value;
+    }
+
+    /* Handler Klik Bintang */
+    function setStar(starElement, ratingValue) {
+      const container = starElement.parentElement;
+      const aspect = container.getAttribute('data-aspect');
+      const stars = container.querySelectorAll('.star-icon');
+
+      aspectRatings[aspect] = ratingValue;
+
+      stars.forEach((star, index) => {
+        if (index < ratingValue) {
+          star.classList.add('active');
+        } else {
+          star.classList.remove('active');
+        }
+      });
+    }
+
+    /* Fitur Preview Hover Bintang (Satu baris ikut menyala sesuai posisi kursor) */
+    document.querySelectorAll('.stars-rating').forEach(container => {
+      const stars = container.querySelectorAll('.star-icon');
+
+      stars.forEach((star, index) => {
+        // Saat kursor masuk
+        star.addEventListener('mouseover', () => {
+          stars.forEach((s, i) => {
+            if (i <= index) {
+              s.classList.add('hover-active');
+            } else {
+              s.classList.remove('hover-active');
+            }
+          });
+        });
+
+        // Saat kursor keluar
+        star.addEventListener('mouseleave', () => {
+          stars.forEach(s => s.classList.remove('hover-active'));
+        });
+      });
+    });
+
+    /* Pengiriman Data Ulasan ke n8n */
+    async function submitReviewAndFinish() {
+      const visitorName = document.getElementById('visitorName').value.trim();
+      const visitorEmail = document.getElementById('visitorEmail').value.trim();
+      const positiveFeedback = document.getElementById('positiveFeedback').value.trim();
+      const improvementFeedback = document.getElementById('improvementFeedback').value.trim();
+
+      try {
+        await fetch(N8N_FINISH_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            visitorName: visitorName || 'Anonymous',
+            visitorEmail: visitorEmail || 'Not provided',
+            recommendationScore: selectedNPS !== null ? selectedNPS : 'Not rated',
+            aspectRatings: aspectRatings,
+            positiveFeedback: positiveFeedback || 'None',
+            improvementFeedback: improvementFeedback || 'None',
+            chatHistory: chatHistory
+          })
+        });
+
+        alert('Thank you for your detailed feedback!');
+        closeReviewModal();
+        
+        // Reset state & chat
+        document.getElementById('chatBox').innerHTML = '<div class="message bot-msg">Session ended. Thank you!</div>';
+        document.getElementById('finishBtn').style.display = 'none';
+        chatHistory = [];
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Failed to submit feedback.');
+      }
+    }
+  </script>
+</body>
+</html>
