@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XCEED</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<form class="request-form" action="https://formspree.io/f/xgollype" method="POST" novalidate>
+
+  <!-- HERO -->
+  <section class="hero-section">
+    <div class="body-container">
+
+      <nav class="navbar">
+        <a href="https://www.xceedfoodservice.com/about-us/" target="_blank">
+          <img src="images/xceedx-logo.png" class="navbar-logo">
+        </a>
+      </nav>
+
+      <label>Name<span>*</span></label>
+      <div class="form-row two-col">
+
+        <div class="input-group">
+          <input type="text" name="first_name" placeholder="First Name">
+        </div>
+
+        <div class="input-group">
+          <input type="text" name="last_name" placeholder="Last Name">
+        </div>
+
+      </div>
+
+      <label>Company Name<span>*</span></label>
+      <div class="input-group">
+        <input type="text" name="company_name" placeholder="Company Name">
+      </div>
+
+      <label>Title<span>*</span></label>
+      <div class="input-group">
+        <input type="text" name="title" placeholder="Title">
+      </div>
+
+      <div class="form-row two-col">
+
+        <div>
+          <label>Phone Number<span>*</span></label>
+          <div class="input-group">
+            <input type="tel" name="phone" placeholder="(000) 000-0000">
+          </div>
+        </div>
+
+        <div>
+          <label>Email Address<span>*</span></label>
+          <div class="input-group">
+            <input type="email" name="email" placeholder="myname@example.com">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SUBMIT -->
+  <section class="submit-section">
+    <div class="body-container">
+
+      <label style="margin-top:0;">Are You Currently Using a Broker?</label>
+      <div class="radio-group">
+        <label style="margin-top:0;">
+          <input style="margin-left:0;" type="radio" name="broker" value="yes"> 
+          <span>Yes</span>
+        </label>
+
+        <label style="margin-top:0;">
+          <input type="radio" name="broker" value="no"> 
+          <span>No</span>
+        </label>
+      </div>
+
+      <label>Broker Name (If Applicable)</label>
+      <div class="input-group">
+        <input type="text" name="broker_name">
+      </div>
+
+      <label>What are the Best Times to Connect?</label>
+      <div class="input-group">
+        <input type="text" name="available_times" placeholder="Available Times">
+      </div>
+
+      <label>Comments</label>
+      <div class="input-group">
+        <textarea name="comments" placeholder="Comments"></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">SUBMIT</button>
+
+    </div>
+  </section>
+
+</form>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="thankYouModal">
+  <div class="modal-box">
+    <h2>Thank You!</h2>
+    <p>We appreciate your trust in Xceed Foodservice Group.</p>
+    <button onclick="closeModal()">OK</button>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
