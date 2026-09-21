@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function validateForm() {
+        let u = document.forms['myForm']['txtUser'].value;
+        let p = document.forms['myForm']['txtPass'].value;
+        if (u == 'admin' && p == 'admin123') {
+          alert('Login successfull');
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h2>JavaScript Validation</h2>
+
+    <form
+      name="myForm"
+      action="/action_page.php"
+      onsubmit="return validateForm()"
+      method="post"
+    >
+      Username: <input type="text" name="txtUser" /> Password:
+      <input type="text" name="txtPass" />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
