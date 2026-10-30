@@ -1,0 +1,10 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+}
+
+textarea:focus {
+  box-shadow: none !important;
+  color: #fff !important;
+  background-color: #121212 !important;
+}

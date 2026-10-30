@@ -1,0 +1,6 @@
+id,name,date,manner_of_death,armed,age,gender,race,city,state,signs_of_mental_illness,threat_level,flee,body_camera
+1,A. B.,2020-01-05,shot,gun,32,M,W,Los Angeles,CA,False,attack,Not fleeing,False
+2,C. D.,2020-02-12,shot,unarmed,24,M,B,Chicago,IL,True,other,Foot,True
+3,E. F.,2021-05-20,shot,knife,45,M,H,Houston,TX,False,attack,Car,False
+4,G. H.,2021-06-15,shot,gun,29,M,W,Phoenix,AZ,False,attack,Not fleeing,True
+5,I. J.,2022-03-10,shot,undetermined,38,M,B,Atlanta,GA,True,undecided,Foot,False
