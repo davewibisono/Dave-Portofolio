@@ -1,0 +1,81 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container my-4">
+  <!-- Hero Banner -->
+  <div class="p-5 mb-4 bg-primary text-white rounded-3 shadow-sm text-center">
+    <h1 class="display-5 fw-bold">Find Your Next Workspace 💻</h1>
+    <p class="fs-4">
+      Discover laptop-friendly cafes with fast Wi-Fi, power outlets, and great
+      coffee.
+    </p>
+  </div>
+
+  <!-- Cafe Cards Grid -->
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    {% for cafe in cafes %}
+    <div class="col">
+      <div class="card h-100 shadow-sm border-0">
+        <img
+          src="{{ cafe.img_url }}"
+          class="card-img-top"
+          alt="{{ cafe.name }}"
+          style="height: 200px; object-fit: cover"
+        />
+        <div class="card-body">
+          <h5 class="card-title fw-bold text-dark">{{ cafe.name }}</h5>
+          <p class="text-muted mb-2">
+            <i class="fa-solid fa-location-dot me-1"></i>{{ cafe.location }}
+          </p>
+          <p class="small text-secondary">
+            <strong>Seats:</strong> {{ cafe.seats }} |
+            <strong>Avg Price:</strong> {{ cafe.coffee_price }}
+          </p>
+
+          <div class="mb-3">
+            <span
+              class="badge {{ 'bg-success' if cafe.has_wifi else 'bg-secondary' }}"
+            >
+              <i class="fa-solid fa-wifi me-1"></i>Wifi
+            </span>
+            <span
+              class="badge {{ 'bg-success' if cafe.has_sockets else 'bg-secondary' }}"
+            >
+              <i class="fa-solid fa-plug me-1"></i>Power
+            </span>
+            <span
+              class="badge {{ 'bg-success' if cafe.can_take_calls else 'bg-secondary' }}"
+            >
+              <i class="fa-solid fa-phone me-1"></i>Calls
+            </span>
+            <span
+              class="badge {{ 'bg-success' if cafe.has_toilet else 'bg-secondary' }}"
+            >
+              <i class="fa-solid fa-restroom me-1"></i>Toilet
+            </span>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center">
+            <a
+              href="{{ cafe.map_url }}"
+              target="_blank"
+              class="btn btn-outline-primary btn-sm"
+              >View Map</a
+            >
+            <form
+              action="{{ url_for('delete_cafe', cafe_id=cafe.id) }}"
+              method="POST"
+              onsubmit="
+                return confirm('Are you sure you want to delete this cafe?');
+              "
+            >
+              <button type="submit" class="btn btn-outline-danger btn-sm">
+                Delete
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
